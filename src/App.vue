@@ -62,7 +62,8 @@ const archetypeCounts = ref([{
     count: 0
   }])
 
-const archetypeQuestions = ref([{
+const archetypeQuestions = ref([
+{
   question: 'Sobre a sua personalidade, qual desses traços está mais presente em você?',
   options: [{
     id: 0,
@@ -193,71 +194,8 @@ const archetypeQuestions = ref([{
 },
 {
   question: 'Seu AMBIENTE preferido é um lugar:',
-  options: [{
-    id: 0,
-    archetype: 'Governante',
-    option: 'Ambicioso'
-  },
+  options: [
   {
-    id: 1,
-    archetype: 'Criador',
-    option: 'Criativo'
-  },
-  {
-    id: 2,
-    archetype: 'Cuidador',
-    option: 'Amoroso/Cuidadoso'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: 'Forte/Resiliente'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Questionador/Revolucionário'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Reflexivo/Estudioso/Sábio'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Aventureiro/Viajante'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Sonhador/Idealizador'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Empático/Amigável'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Engraçado/Divertido'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'Esperitual/Inspirador'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Romântico'
-  }],
-  selected: null
-},
-{
-  question: 'Teste:',
-  options: [{
     id: 0,
     archetype: 'Governante',
     option: 'Chique, caro e luxuoso, que transmita poder e autoridade'
@@ -274,8 +212,113 @@ const archetypeQuestions = ref([{
   },
   {
     id: 3,
-    archetype: 'Teste:',
-    option: 'Testando'
+    archetype: 'Herói:',
+    option: 'Lugares diferentes, com pessoas e problemas/desafios para resolver.'
+  },
+  {
+    id: 4,
+    archetype: 'Rebelde',
+    option: 'Em que posso expressar meus ideiais e causas que acredito'
+  },
+  {
+    id: 5,
+    archetype: 'Sábio',
+    option: 'Silencioso, e discreto, Onde posso escrever, estudar, refletir'
+  },
+  {
+    id: 6,
+    archetype: 'Explorador',
+    option: 'É o mundo todo, onde eu me sinta livre para explorar e para me conectar com a natureza'
+  },
+  {
+    id: 7,
+    archetype: 'Inocente',
+    option: 'Simples e delicado, onde me sinto em segurança para sonhar'
+  },
+  {
+    id: 8,
+    archetype: 'Cara Comum',
+    option: 'Em que todos podem ser tratados com igualdade'
+  },
+  {
+    id: 9,
+    archetype: 'Bobo da corte',
+    option: 'Festivo, leve, alegre, descontraído'
+  },
+  {
+    id: 10,
+    archetype: 'Mago',
+    option: 'Enigmático, misterioso, místico'
+  },
+  {
+    id: 11,
+    archetype: 'Amante',
+    option: 'Belo, sofisticado, romântico, com riqueza de detalhes'
+  }],
+  selected: null
+},
+{
+  question: 'Seu estilo de liderança:',
+  options: [
+  {
+    id: 0,
+    archetype: 'Governante',
+    option: 'Política/estratégica '
+  },
+  {
+    id: 1,
+    archetype: 'Criador',
+    option: 'Visionária'
+  },
+  {
+    id: 2,
+    archetype: 'Cuidador',
+    option: 'Paternalista ou servidora'
+  },
+  {
+    id: 3,
+    archetype: 'Herói:',
+    option: 'Motivadora/coach'
+  },
+  {
+    id: 4,
+    archetype: 'Rebelde',
+    option: 'Revolucionária'
+  },
+  {
+    id: 5,
+    archetype: 'Sábio',
+    option: 'Especialista'
+  },
+  {
+    id: 6,
+    archetype: 'Explorador',
+    option: 'Pioneira'
+  },
+  {
+    id: 7,
+    archetype: 'Inocente',
+    option: 'Liberal'
+  },
+  {
+    id: 8,
+    archetype: 'Cara Comum',
+    option: 'Democrática'
+  },
+  {
+    id: 9,
+    archetype: 'Bobo da corte',
+    option: 'Leve e motivadora'
+  },
+  {
+    id: 10,
+    archetype: 'Mago',
+    option: 'Carismático e/ou espiritual'
+  },
+  {
+    id: 11,
+    archetype: 'Amante',
+    option: 'Facilitadora'
   }],
   selected: null
 }])
@@ -417,8 +460,8 @@ const setThreeHighestPercentages = () => {
       <h1 class="final-title">Conheça seus arquétipos</h1>
       <div>
         <p class="first-archetype">{{ threeHighestPercentages[0].achertype }}: {{ threeHighestPercentages[0].percentage }}%</p>
-        <p class="second-archetype">{{ threeHighestPercentages[1].achertype }}: {{ threeHighestPercentages[1].percentage }}%</p>
-        <p class="third-archetype">{{ threeHighestPercentages[2].achertype }}: {{ threeHighestPercentages[2].percentage }}%</p>
+        <p class="second-archetype" v-if="threeHighestPercentages[1].percentage">{{ threeHighestPercentages[1].achertype }}: {{ threeHighestPercentages[1].percentage }}%</p>
+        <p class="third-archetype" v-if="threeHighestPercentages[2].percentage">{{ threeHighestPercentages[2].achertype }}: {{ threeHighestPercentages[2].percentage }}%</p>
       </div>
     </section>
   </main>
