@@ -130,7 +130,7 @@ const archetypeQuestions = ref([
   {
     id: 10,
     archetype: 'Mago',
-    option: 'Esperitual/Inspirador'
+    option: 'Espiritual/Inspirador'
   },
   {
     id: 11,
@@ -145,62 +145,62 @@ const archetypeQuestions = ref([
   {
     id: 0,
     archetype: 'Governante',
-    option: 'Liderança, autoridade, ordem, controle, luxo, sucesso, poder.'
+    option: 'Liderança, autoridade, ordem, controle, luxo, sucesso e poder'
   },
   {
     id: 1,
     archetype: 'Criador',
-    option: 'Criatividade, curiosidade, integridade, inovação, imaginação.'
+    option: 'Criatividade, curiosidade, integridade, inovação e imaginação'
   },
   {
     id: 2,
     archetype: 'Cuidador',
-    option: 'Cuidado, compaixão, acolhimento, altruísmo'
+    option: 'Cuidado, compaixão, acolhimento e altruísmo'
   },
   {
     id: 3,
     archetype: 'Herói:',
-    option: 'Coragem, ação, motivação, superação, disciplina'
+    option: 'Coragem, ação, motivação, superação e disciplina'
   },
   {
     id: 4,
     archetype: 'Rebelde',
-    option: 'Disrupção, quebra de padrões, questionamento, originalidade, revolução'
+    option: 'Disrupção, quebra de padrões, questionamento, originalidade e revolução'
   },
   {
     id: 5,
     archetype: 'Sábio',
-    option: 'Conhecimento, aprendizagem, lógica, razão, verdade.'
+    option: 'Conhecimento, aprendizagem, lógica, razão e verdade'
   },
   {
     id: 6,
     archetype: 'Explorador',
-    option: 'Liberdade, independência, dinamismo, aventura, natureza'
+    option: 'Liberdade, independência, dinamismo, aventura e natureza'
   },
   {
     id: 7,
     archetype: 'Inocente',
-    option: 'Otimismo, esperança, simplicidade, bondade, pureza, felicidade.'
+    option: 'Otimismo, esperança, simplicidade, bondade, pureza e felicidade'
   },
   {
     id: 8,
     archetype: 'Cara Comum',
-    option: 'Inclusão, igualdade, pertencimento, comunidade, amizade.'
+    option: 'Inclusão, igualdade, pertencimento, comunidade e amizade'
   },
   {
     id: 9,
     archetype: 'Bobo da corte',
-    option: 'Alegria, diversão, bom humor, leveza'
+    option: 'Alegria, diversão, bom humor e leveza'
   },
   {
     id: 10,
     archetype: 'Mago',
-    option: 'Inspiração, encantamento, magia, experiência, intuição, transformação, consciência.'
+    option: 'Inspiração, encantamento, magia, experiência, intuição, transformação e consciência'
   },
   {
     id: 11,
     archetype: 'Amante',
-    option: 'Beleza, paixão, atração, relacionamento, desejo, sedução'
+    option: 'Beleza, paixão, atração, relacionamento, desejo e sedução'
   }],
   selected: null
 },
@@ -225,7 +225,7 @@ const archetypeQuestions = ref([
   {
     id: 3,
     archetype: 'Herói:',
-    option: 'Lugares diferentes, com pessoas e problemas/desafios para resolver.'
+    option: 'Lugares diferentes, com pessoas e problemas/desafios para resolver'
   },
   {
     id: 4,
@@ -275,7 +275,7 @@ const archetypeQuestions = ref([
   {
     id: 0,
     archetype: 'Governante',
-    option: 'Política/estratégica '
+    option: 'Política/estratégica'
   },
   {
     id: 1,
@@ -500,32 +500,32 @@ const archetypeQuestions = ref([
   {
     id: 6,
     archetype: 'Explorador',
-    option: '"O essencial é simples!"'
+    option: '"Não coloque cercas a minha volta"'
   },
   {
     id: 7,
     archetype: 'Inocente',
-    option: '"Todos são iguais"'
+    option: '"O essencial é simples"'
   },
   {
     id: 8,
     archetype: 'Cara Comum',
-    option: '"Só se vive uma vez"'
+    option: '"Todos são iguais"'
   },
   {
     id: 9,
     archetype: 'Bobo da corte',
-    option: '"Meu pensamento faz as coisas acontecerem"'
+    option: '"Só se vive uma vez"'
   },
   {
     id: 10,
     archetype: 'Mago',
-    option: '"Cada pessoa é única"'
+    option: '"Meu pensamento faz as coisas acontecerem"'
   },
   {
     id: 11,
     archetype: 'Amante',
-    option: '**Faltando resposta**'
+    option: '"Cada pessoa é única"'
   }],
   selected: null
 },
@@ -600,12 +600,12 @@ const archetypeQuestions = ref([
   {
     id: 0,
     archetype: 'Governante',
-    option: 'Criar uma família, empresa ou comunidade bem sucedida e próspera, e me tornar uma referência para as pessoas.'
+    option: 'Criar uma família, empresa ou comunidade bem sucedida e próspera, e me tornar uma referência para as pessoas'
   },
   {
     id: 1,
     archetype: 'Criador',
-    option: 'Criar coisas de valor duradouro, uma obra, uma mensagem, um ambiente que seja significativo e que fique marcado na mente das pessoas.'
+    option: 'Criar coisas de valor duradouro, uma obra, uma mensagem, um ambiente que seja significativo e que fique marcado na mente das pessoas'
   },
   {
     id: 2,
@@ -679,7 +679,7 @@ const archetypeQuestions = ref([
   },
   {
     id: 3,
-    archetype: 'Herói:',
+    archetype: 'Herói',
     option: 'Acredito que o mundo não é para os fracos. precisamos de padrões elevados de conduta para vencer nossos desafios'
   },
   {
@@ -700,12 +700,12 @@ const archetypeQuestions = ref([
   {
     id: 7,
     archetype: 'Inocente',
-    option: 'O mundo é um lugar bom, sem maldade. quem é mau é mau porque algo lhe foi feito. Vejo sempre o melhor nas pessoas.'
+    option: 'O mundo é um lugar bom, sem maldade. quem é mau é mau porque algo lhe foi feito. Vejo sempre o melhor nas pessoas'
   },
   {
     id: 8,
     archetype: 'Cara Comum',
-    option: 'Posso abrir mão de mim mesmo para fazer parte de algo maior.'
+    option: 'Posso abrir mão de mim mesmo para fazer parte de algo maior'
   },
   {
     id: 9,
@@ -874,13 +874,17 @@ const getCurrentQuestion = computed(() => {
 })
 
 const SetAnswer = evt => {
+  // console.log('SetAnswer evt: ', evt)
+  // console.log('SetAnswer target: ', evt.target)
+  // console.log('SetAnswer value: ', evt.target.value)
   archetypeQuestions.value[currentQuestion.value].selected = evt.target.value
   evt.target.value = null
-  console.log('Selecionadio: ', archetypeQuestions.value[currentQuestion.value].selected)
-  SetCount(archetypeQuestions.value[currentQuestion.value].selected)
+  // console.log('Selecionadio: ', archetypeQuestions.value[currentQuestion.value].selected)
+  // SetCount(archetypeQuestions.value[currentQuestion.value].selected)
 }
 
 const NextQuestion = () => {
+  SetCount(archetypeQuestions.value[currentQuestion.value].selected)
   if (currentQuestion.value < archetypeQuestions.value.length - 1) {
     currentQuestion.value++
   } else {
@@ -929,13 +933,13 @@ const setThreeHighestPercentages = () => {
     <section 
       v-if="quizIntro"
       class="intro-section">
-      <h1 class="intro-title">Qual é o seu arquétipo?</h1>
-      <span class="intro-text">
+      <h1 class="intro-title">Qual é o seu <span class="intro-title-archetype">arquétipo</span>?</h1>
+      <p class="intro-text">
         Para que seu resultado seja assertivo, 
         leia com calma todas as alternativas, 
-        e mesmo que fique em dúvida entre mais de uma, <br>
+        e mesmo que fique em dúvida entre mais de uma,
         escolha a que prevalecer em sua personalidade ou aspecto do seu negócio.
-      </span>
+      </p>
       <div class="intro-wrapper">
         <button 
           class="start-quiz-button"
@@ -986,19 +990,21 @@ const setThreeHighestPercentages = () => {
     </section>
     
     <section v-else>
-      <h1 class="final-title"><span style="color: #C5A361">Parabéns!</span> Analisei os dados do seu perfil e aqui abaixo estão os arquétipos que mais combinam com você! </h1>
+      <h1 class="final-title"><span class="congrats">Parabéns!</span> Analisei os dados do seu perfil e aqui abaixo estão os arquétipos que mais combinam com você! </h1>
       <div class="result-component">
-        <div class="archetype-wrapper">
-          <p class="first-archetype">{{ threeHighestPercentages[0].achertype }}: {{ parseInt(threeHighestPercentages[0].percentage) }}%</p>
-          <p class="archetype-text">{{ threeHighestPercentages[0].text }}</p>
-        </div>
-        <div class="archetype-wrapper">
-          <p class="second-archetype" v-if="threeHighestPercentages[1].percentage">{{ threeHighestPercentages[1].achertype }}: {{ parseInt(threeHighestPercentages[1].percentage) }}%</p>
-          <p class="archetype-text" v-if="threeHighestPercentages[1].percentage">{{ threeHighestPercentages[1].text }}</p>
-        </div>
-        <div class="archetype-wrapper">
-          <p class="third-archetype" v-if="threeHighestPercentages[2].percentage">{{ threeHighestPercentages[2].achertype }}: {{ parseInt(threeHighestPercentages[2].percentage) }}%</p>
-          <p class="archetype-text" v-if="threeHighestPercentages[2].percentage">{{ threeHighestPercentages[2].text }}</p>
+        <div class="result-wrapper">
+          <div class="archetype-wrapper">
+            <p class="first-archetype">{{ threeHighestPercentages[0].achertype }}: {{ parseInt(threeHighestPercentages[0].percentage) }}%</p>
+            <p class="archetype-text">{{ threeHighestPercentages[0].text }}</p>
+          </div>
+          <div class="archetype-wrapper">
+            <p class="second-archetype" v-if="threeHighestPercentages[1].percentage">{{ threeHighestPercentages[1].achertype }}: {{ parseInt(threeHighestPercentages[1].percentage) }}%</p>
+            <p class="archetype-text" v-if="threeHighestPercentages[1].percentage">{{ threeHighestPercentages[1].text }}</p>
+          </div>
+          <div class="archetype-wrapper">
+            <p class="third-archetype" v-if="threeHighestPercentages[2].percentage">{{ threeHighestPercentages[2].achertype }}: {{ parseInt(threeHighestPercentages[2].percentage) }}%</p>
+            <p class="archetype-text" v-if="threeHighestPercentages[2].percentage">{{ threeHighestPercentages[2].text }}</p>
+          </div>
         </div>
         <div>
           <p class="access-info">Para ter acesso às aulas de todos os arquétipos, basta entrar em sua área de membros.</p>
@@ -1018,6 +1024,16 @@ const setThreeHighestPercentages = () => {
 </template>
 
 <style>
+@font-face {
+  font-family: 'Brown Sugar';
+  src: url('../src/assets/fonts/Brown_Sugar .otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Claster Oleander';
+  src: url('../src/assets/fonts/Claster_Oleander.otf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1046,18 +1062,23 @@ h1 {
 }
 
 .intro-title {
-  font-family: 'Brown Sugar';
+  font-family: 'Claster Oleander';
   font-weight: 500;
   font-size: 6em;
   color: #227382;
   margin-bottom: 40px;
 }
 
+.intro-title-archetype {
+  font-family: 'Brown Sugar';
+  color: #C5A361;
+}
+
 .intro-text {
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 1.5em;
-  color: #C5A361;
+  color: #585858;
 }
 
 .attention {
@@ -1137,7 +1158,7 @@ h1 {
   margin-bottom: 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
 }
 
 .option:hover {
@@ -1185,9 +1206,6 @@ h1 {
   font-family: 'Claster Oleander';
 }
 
-.next-question-button:hover {
-}
-
 .final-title {
   font-family: 'Claster Oleander';
   font-weight: 500;
@@ -1197,38 +1215,53 @@ h1 {
   text-align: center;
 }
 
+.congrats {
+  color: #C5A361; 
+  font-family: 'Brown Sugar';
+}
+
 .result-component {
   background-color: #C9BCB3;
   border-radius: 0.5rem;
   padding: 1.5rem;
 }
 
+.result-wrapper {
+  background-color: #227382;
+  border-radius: 0.5rem;
+  padding: 10px;
+  
+}
+
 .archetype-wrapper {
   margin-bottom: 70px;
+  text-align: center;
 }
 
 .first-archetype, .second-archetype, .third-archetype {
   font-family: 'Claster Oleander';
-  font-weight: 500;
-  color: #227382;
+  
+  font-weight: 600;
+  color: #C5A361;
   margin-bottom: 10px;
 }
 
 .first-archetype {
-  font-size: 2.5em;
+  font-size: 3em;
 }
 
 .second-archetype {
-  font-size: 2.5em;
+  font-size: 3em;
 }
 
 .third-archetype {
-  font-size: 2.5em;
+  font-size: 3em;
 }
 
 .archetype-text {
-  color: #C5A361;
+  color: #DFC694;
   font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
 }
 
 .access-button {
@@ -1246,8 +1279,8 @@ h1 {
   color: #000;
   display: block;
   margin: 0 auto;
-  width: 200px;
   text-align: center;
+  width: 200px;
   text-decoration: none;
 }
 
@@ -1266,7 +1299,8 @@ h1 {
 .msg {
   color: #C5A361;
   text-align: center;
-  font-family: 'Claster Oleander';
+  font-family: 'Brown Sugar';
+  font-weight: 700;
   font-size: 4em;
   margin: 20px 0;
   
@@ -1285,10 +1319,47 @@ h2 {
 p {
   color: #8f8f8f;
   font-size: 1.25rem;
-  text-align: center;
 }
 
+@media screen and (max-width: 970px) {
+  .intro-title {
+    font-size: 5em;
+  }
 
+}
+
+@media screen and (max-width: 820px) {
+  .intro-title {
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 669px) {
+  .intro-title {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .intro-title {
+    text-align: center;
+  }
+  .intro-text {
+    font-size: 1.2em;
+    text-align: center;
+  }
+  .intro-wrapper {
+    margin-top: 40px;
+  }
+  .start-quiz-button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .line {
+    display: none;
+  }
+}
 
 
 
