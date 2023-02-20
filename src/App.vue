@@ -991,13 +991,13 @@ const setThreeHighestPercentages = () => {
             <p class="second-archetype" v-if="threeHighestPercentages[1].percentage">{{ threeHighestPercentages[1].achertype }}: {{ parseInt(threeHighestPercentages[1].percentage) }}%</p>
             <p class="archetype-text" v-if="threeHighestPercentages[1].percentage">{{ threeHighestPercentages[1].text }}</p>
           </div>
-          <div class="archetype-wrapper">
+          <div class="archetype-wrapper-last">
             <p class="third-archetype" v-if="threeHighestPercentages[2].percentage">{{ threeHighestPercentages[2].achertype }}: {{ parseInt(threeHighestPercentages[2].percentage) }}%</p>
             <p class="archetype-text" v-if="threeHighestPercentages[2].percentage">{{ threeHighestPercentages[2].text }}</p>
           </div>
         </div>
         <div>
-          <p class="access-info">Para ter acesso às aulas de todos os arquétipos, basta entrar em sua área de membros.</p>
+          <p class="access-first-info">Para ter acesso às aulas de todos os arquétipos, basta entrar em sua área de membros.</p>
           <a 
             class="access-button" 
             target="_blank"
@@ -1005,7 +1005,7 @@ const setThreeHighestPercentages = () => {
           >
             Acessar
           </a>
-          <p class="access-info">Ao acessá-la, o próximo passo será assistir o módulo “Aulas de aplicação” para saber como usar seus principais arquétipos de forma prática em suas redes sociais e demais lugares.</p>
+          <p class="access-second-info">Ao acessá-la, o próximo passo será assistir o módulo “Aulas de aplicação” para saber como usar seus principais arquétipos de forma prática em suas redes sociais e demais lugares.</p>
           <p class="msg">Boas aulas!</p>
         </div>
       </div>
@@ -1091,7 +1091,7 @@ h1 {
 
   background-image: linear-gradient(to right, #C5A361, #DFC694);
   border-radius: 8px;
-  font-size: 1.1em;
+  font-size: 1.3em;
   font-weight: 500;
   font-family: 'Claster Oleander';
   padding: 15px 55px;
@@ -1191,7 +1191,7 @@ h1 {
   background-image: linear-gradient(to right, #C5A361, #DFC694);
   color: #2d213f;
   border-radius: 8px;
-  font-size: 1.1em;
+  font-size: 1.3em;
   font-weight: 500;
   font-family: 'Claster Oleander';
 }
@@ -1201,7 +1201,7 @@ h1 {
   font-weight: 500;
   font-size: 3em;
   color: #227382;
-  margin-bottom: 50px;
+  margin: 10px 0 50px 0;
   text-align: center;
 }
 
@@ -1219,13 +1219,17 @@ h1 {
 .result-wrapper {
   background-color: #227382;
   border-radius: 0.5rem;
-  padding: 10px;
+  padding: 20px 10px;
   box-shadow: 0 0 20px #868584;
 }
 
 .archetype-wrapper {
   margin-bottom: 70px;
   text-align: center;
+}
+.archetype-wrapper-last {
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 .first-archetype, .second-archetype, .third-archetype {
@@ -1236,17 +1240,10 @@ h1 {
   margin-bottom: 10px;
 }
 
-.first-archetype {
+.first-archetype, .second-archetype, .third-archetype {
   font-size: 3em;
 }
 
-.second-archetype {
-  font-size: 3em;
-}
-
-.third-archetype {
-  font-size: 3em;
-}
 
 .archetype-text {
   color: #DFC694;
@@ -1262,7 +1259,7 @@ h1 {
 
   background-image: linear-gradient(to right, #C5A361, #DFC694);
   border-radius: 8px;
-  font-size: 1.1em;
+  font-size: 1.3em;
   font-weight: 500;
   font-family: 'Claster Oleander';
   padding: 15px 55px;
@@ -1278,12 +1275,16 @@ h1 {
   opacity: 80%;
 }
 
-.access-info {
+.access-first-info, .access-second-info {
   color: #227382;
   text-align: center;
   font-family: 'Claster Oleander';
-  font-size: 2em;
+  font-size: 2.1em;
   margin: 20px 0;
+}
+
+.access-first-info {
+  margin-top: 50px;
 }
 
 .msg {
