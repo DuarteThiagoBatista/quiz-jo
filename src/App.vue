@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onUpdated } from 'vue'
+import { ref, computed } from 'vue'
 
 const archetypeCounts = ref([{
     id: 0,
@@ -874,13 +874,8 @@ const getCurrentQuestion = computed(() => {
 })
 
 const SetAnswer = evt => {
-  // console.log('SetAnswer evt: ', evt)
-  // console.log('SetAnswer target: ', evt.target)
-  // console.log('SetAnswer value: ', evt.target.value)
   archetypeQuestions.value[currentQuestion.value].selected = evt.target.value
   evt.target.value = null
-  // console.log('Selecionadio: ', archetypeQuestions.value[currentQuestion.value].selected)
-  // SetCount(archetypeQuestions.value[currentQuestion.value].selected)
 }
 
 const NextQuestion = () => {
@@ -896,9 +891,7 @@ const NextQuestion = () => {
 const SetCount = (selectedOption) => {
   archetypeCounts.value.forEach(element => {
     if (element.id == selectedOption) {
-      // console.log('id: ', element.id, 'anterior: ', element.count)
       element.count++
-      // console.log('id: ', element.id, 'atual: ', element.count)
     }
   });
 }
@@ -924,8 +917,6 @@ const setThreeHighestPercentages = () => {
   console.log('archetypePercentage: ', archetypePercentage)
   console.log('threeHighestPercentages: ', threeHighestPercentages)
 }
-
-
 </script>
 
 <template>
@@ -953,7 +944,6 @@ const setThreeHighestPercentages = () => {
     <section class="quiz" v-else-if="!quizCompleted && !quizIntro">
       <div class="quiz-info">
         <span class="question">{{ getCurrentQuestion.question }}</span>
-        <!-- <span class="score">Score {{ getCurrentQuestion.value }}/{{ archetypeQuestions.length }}</span> -->
       </div>
       <div class="options">
         <label 
