@@ -1230,7 +1230,7 @@ h1 {
   background-color: #227382;
   border-radius: 0.5rem;
   padding: 10px;
-  
+  box-shadow: 0 0 20px #868584;
 }
 
 .archetype-wrapper {
