@@ -1120,6 +1120,7 @@ h1 {
   bottom: auto;
   width: 180px;
   height: auto;
+  opacity: 70%;
 }
 
 .quiz {
@@ -1353,6 +1354,7 @@ p {
 @media screen and (max-width: 560px) {
   .intro-title {
     text-align: center;
+    margin-top: 20px;
   }
   .intro-text {
     font-size: 1.2em;
