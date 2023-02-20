@@ -924,6 +924,9 @@ const setThreeHighestPercentages = () => {
     <section 
       v-if="quizIntro"
       class="intro-section">
+      <div class="img-wrapper">
+        <img class="logo-img" src="../public/Prancheta_1_cópia_14.png" alt="Logo">
+      </div>
       <h1 class="intro-title">Qual é o seu <span class="intro-title-archetype">arquétipo</span>?</h1>
       <p class="intro-text">
         Para que seu resultado seja assertivo, 
@@ -1048,7 +1051,6 @@ h1 {
 }
 
 .intro-section {
-  margin-top: 60px;
 }
 
 .intro-title {
@@ -1056,7 +1058,7 @@ h1 {
   font-weight: 500;
   font-size: 6em;
   color: #227382;
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 
 .intro-title-archetype {
@@ -1107,6 +1109,17 @@ h1 {
   width: 100%;
   height: 0;
   margin: 20px 0 20px 50px;
+}
+
+.img-wrapper {
+  display: flex;
+  justify-content: left;
+}
+
+.logo-img {
+  bottom: auto;
+  width: 180px;
+  height: auto;
 }
 
 .quiz {
@@ -1347,6 +1360,9 @@ p {
   }
   .intro-wrapper {
     margin-top: 40px;
+  }
+  .img-wrapper {
+    justify-content: center;
   }
   .start-quiz-button {
     display: block;
