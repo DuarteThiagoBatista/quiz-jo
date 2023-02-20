@@ -1276,15 +1276,21 @@ h1 {
 }
 
 .access-first-info, .access-second-info {
-  color: #227382;
   text-align: center;
-  font-family: 'Claster Oleander';
-  font-size: 2.1em;
   margin: 20px 0;
 }
 
 .access-first-info {
+  font-size: 2.5em;
+  font-family: 'Claster Oleander';
+  color: #227382;
   margin-top: 50px;
+}
+
+.access-second-info {
+  font-family: 'Poppins', sans-serif;
+  color: #585858;
+  font-size: 1.5em;
 }
 
 .msg {
