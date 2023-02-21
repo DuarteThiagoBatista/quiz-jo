@@ -924,9 +924,6 @@ const setThreeHighestPercentages = () => {
     <section 
       v-if="quizIntro"
       class="intro-section">
-      <div class="img-wrapper">
-        <img class="logo-img" src="../public/Prancheta_1_cópia_14.png" alt="Logo">
-      </div>
       <h1 class="intro-title">Qual é o seu <span class="intro-title-archetype">arquétipo</span>?</h1>
       <p class="intro-text">
         Para que seu resultado seja assertivo, 
@@ -941,6 +938,9 @@ const setThreeHighestPercentages = () => {
             Começar
           </button>
           <hr class="line">
+      </div>
+      <div class="img-wrapper">
+        <img class="logo-img" src="../public/prancheta_1_copia_14.png" alt="Logo">
       </div>
     </section>
 
@@ -1019,7 +1019,7 @@ const setThreeHighestPercentages = () => {
 <style>
 @font-face {
   font-family: 'Brown Sugar';
-  src: url('../src/assets/fonts/Brown_Sugar .otf') format('truetype');
+  src: url('../src/assets/fonts/Brown_Sugar.otf') format('truetype');
 }
 
 @font-face {
@@ -1114,10 +1114,10 @@ h1 {
 .img-wrapper {
   display: flex;
   justify-content: left;
+  margin-top: 50px;
 }
 
 .logo-img {
-  bottom: auto;
   width: 180px;
   height: auto;
   opacity: 70%;
@@ -1365,6 +1365,9 @@ p {
   }
   .img-wrapper {
     justify-content: center;
+  }
+  .logo-img {
+    width: 120px;
   }
   .start-quiz-button {
     display: block;
