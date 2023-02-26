@@ -1,77 +1,90 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const archetypeCounts = ref([{
+const archetypeCounts = ref([
+  {
     id: 0,
     archetype: 'Governante',
     text: 'Ordem, controle, segurança, responsabilidade, prestígio social.',
-    count: 0
+    count: 0,
+    video: 'videos/governante.mp4'
   },
   {
     id: 1,
     archetype: 'Criador',
     text: 'Inovação, imaginação, criatividade, arte, liberdade.',
-    count: 0  
+    count: 0,
+    video: 'videos/criador.mp4'  
   },
   {
     id: 2,
     archetype: 'Cuidador',
     text: 'Cuidado, conexão, empatia, comprometimento.',
-    count: 0
+    count: 0,
+    video: 'videos/cuidador.mp4'
   },
   {
     id: 3,
-    archetype: 'Herói:',
+    archetype: 'Herói',
     text: 'Força, competência, coragem, competição, poder, revolução, segurança, certeza. ',
-    count: 0
+    count: 0,
+    video: 'videos/heroi.mp4'
   },
   {
     id: 4,
     archetype: 'Rebelde',
     text: 'Poder, rebeldia, revolução, quebra de paradigmas.',
-    count: 0
+    count: 0,
+    video: 'videos/rebelde.mp4'
   },
   {
     id: 5,
     archetype: 'Sábio',
     text: 'Erudito, pesquisador, professor, especialista.',
-    count: 0
+    count: 0,
+    video: 'videos/sabio.mp4'
   },
   {
     id: 6,
     archetype: 'Explorador',
     text: 'Descoberta, individualismo, liberdade, autenticidade.',
-    count: 0
+    count: 0,
+    video: 'videos/explorador.mp4'
   },
   {
     id: 7,
     archetype: 'Inocente',
     text: 'Leveza, simplicidade, idealização, nostalgia, paz.',
-    count: 0
+    count: 0,
+    video: 'videos/inocente.mp4'
   },
   {
     id: 8,
     archetype: 'Cara Comum',
     text: 'Inclusão, pertencimento, igualdade, simplicidade.',
-    count: 0
+    count: 0,
+    video: 'videos/cara_comum.mp4'
   },
   {
     id: 9,
     archetype: 'Bobo da corte',
     text: 'Diversão, viver o momento presente, vida leve descontraída.',
-    count: 0
+    count: 0,
+    video: 'videos/bobo_corte.mp4'
   },
   {
     id: 10,
     archetype: 'Mago',
     text: 'Poder, magia, tecnologia, consciência, universo, sincronicidade, soluções milagrosas, lei da atração, abundância.',
-    count: 0
+    count: 0,
+    video: 'videos/mago.mp4'
   },
   {
     id: 11,
     archetype: 'Amante',
     text: 'Autoaceitação, felicidade, amor, êxtase, intimidade',
-    count: 0
+    count: 0,
+    video: 'videos/amante.mp4'
   }])
 
 const archetypeQuestions = ref([
@@ -861,9 +874,10 @@ const currentQuestion = ref(0)
 
 let archetypePercentage = []
 let threeHighestPercentages = []
+let optionSelected = null
+let videoUrl = 'videos/inocente.mp4'
 
-
-const stratQuiz = evt => {
+const startQuiz = evt => {
   quizIntro.value = false
 }
 
@@ -873,12 +887,25 @@ const getCurrentQuestion = computed(() => {
   return question
 })
 
+const isFirtQuestion = computed(() => {
+  if(getCurrentQuestion.value.index === 0) {
+    return true
+  }
+  return false
+})
+
 const SetAnswer = evt => {
   archetypeQuestions.value[currentQuestion.value].selected = evt.target.value
   evt.target.value = null
 }
 
+const previusQuestion = () => {
+  removeCount()
+  currentQuestion.value--
+}
+
 const NextQuestion = () => {
+  optionSelected = archetypeQuestions.value[currentQuestion.value].selected
   SetCount(archetypeQuestions.value[currentQuestion.value].selected)
   if (currentQuestion.value < archetypeQuestions.value.length - 1) {
     currentQuestion.value++
@@ -892,13 +919,22 @@ const SetCount = (selectedOption) => {
   archetypeCounts.value.forEach(element => {
     if (element.id == selectedOption) {
       element.count++
+      console.log('add: ', element.id, element.count)
+    }
+  });
+}
+
+const removeCount = () => {
+  archetypeCounts.value.forEach(element => {
+    if (element.id == optionSelected) {
+      element.count--
+      console.log('remove: ', element.id, element.count)
     }
   });
 }
 
 const getThreeLargestObjects = (arr, property) => {
   arr.sort((a, b) => b[property] - a[property]);
-  console.log('entrou')
   return arr.slice(0, 3);
 }
 
@@ -910,12 +946,10 @@ const calcPercentage = (value) => {
 const setThreeHighestPercentages = () => {
   let i = 0
   archetypeCounts.value.forEach(element => {
-    archetypePercentage[i] = {achertype: element.archetype, text: element.text, percentage: calcPercentage(element.count)}
+    archetypePercentage[i] = {achertype: element.archetype, text: element.text, percentage: calcPercentage(element.count), video: element.video}
     i++
   })
   threeHighestPercentages = getThreeLargestObjects(archetypePercentage, 'percentage')
-  console.log('archetypePercentage: ', archetypePercentage)
-  console.log('threeHighestPercentages: ', threeHighestPercentages)
 }
 </script>
 
@@ -934,13 +968,13 @@ const setThreeHighestPercentages = () => {
       <div class="intro-wrapper">
         <button 
           class="start-quiz-button"
-          @click="stratQuiz">
+          @click="startQuiz">
             Começar
           </button>
           <hr class="line">
       </div>
       <div class="img-wrapper">
-        <img class="logo-img" src="../public/prancheta_1_copia_14.png" alt="Logo">
+        <img class="logo-img" src="./assets/images/prancheta_1_copia_14.png" alt="Logo">
       </div>
     </section>
 
@@ -968,18 +1002,27 @@ const setThreeHighestPercentages = () => {
         </label>
       </div>
 
-      <button
-        class="next-question-button"
-        @click="NextQuestion"
-        :disabled="!getCurrentQuestion.selected">
-        {{ 
-          getCurrentQuestion.index == archetypeQuestions.length - 1
-            ? 'Finalizar'
-            : getCurrentQuestion.selected == null
-              ? 'Selecione uma opção'
-              : 'Avançar'
-        }}
-      </button>
+      <div class="wrapper-button">
+        <button
+          v-if="!isFirtQuestion"
+          class="return-button"
+          @click="previusQuestion"
+        >
+        Voltar
+        </button>
+        <button
+          class="next-button"
+          @click="NextQuestion"
+          :disabled="!getCurrentQuestion.selected">
+          {{ 
+            getCurrentQuestion.index == archetypeQuestions.length - 1
+              ? 'Finalizar'
+              : getCurrentQuestion.selected == null
+                ? 'Selecione uma opção'
+                : 'Avançar'
+          }}
+        </button>
+      </div>
     </section>
     
     <section v-else>
@@ -989,14 +1032,23 @@ const setThreeHighestPercentages = () => {
           <div class="archetype-wrapper">
             <p class="first-archetype">{{ threeHighestPercentages[0].achertype }}: {{ parseInt(threeHighestPercentages[0].percentage) }}%</p>
             <p class="archetype-text">{{ threeHighestPercentages[0].text }}</p>
+            <video class="video" :src="threeHighestPercentages[0].video" controls>
+              Seu navegador não suporta o vídeo.
+            </video>
           </div>
           <div class="archetype-wrapper">
             <p class="second-archetype" v-if="threeHighestPercentages[1].percentage">{{ threeHighestPercentages[1].achertype }}: {{ parseInt(threeHighestPercentages[1].percentage) }}%</p>
             <p class="archetype-text" v-if="threeHighestPercentages[1].percentage">{{ threeHighestPercentages[1].text }}</p>
+            <video class="video" :src="threeHighestPercentages[1].video" controls>
+              Seu navegador não suporta o vídeo.
+            </video>
           </div>
           <div class="archetype-wrapper-last">
             <p class="third-archetype" v-if="threeHighestPercentages[2].percentage">{{ threeHighestPercentages[2].achertype }}: {{ parseInt(threeHighestPercentages[2].percentage) }}%</p>
             <p class="archetype-text" v-if="threeHighestPercentages[2].percentage">{{ threeHighestPercentages[2].text }}</p>
+            <video class="video" :src="threeHighestPercentages[2].video" controls>
+              Seu navegador não suporta o vídeo.
+            </video>
           </div>
         </div>
         <div>
@@ -1034,7 +1086,7 @@ const setThreeHighestPercentages = () => {
 }
 
 body {
-  background-image: url('../public/img-noise-361x370.png');
+  background-image: url('./assets/images/img-noise-361x370.png');
   background-repeat: repeat;
 }
 
@@ -1195,7 +1247,11 @@ h1 {
   display: none;
 }
 
-.next-question-button {
+.wrapper-button {
+  text-align: right;
+}
+
+.return-button, .next-button  {
   appearance: none;
   outline: none;
   border: none;
@@ -1208,6 +1264,10 @@ h1 {
   font-size: 1.3em;
   font-weight: 500;
   font-family: 'Claster Oleander';
+}
+
+.return-button {
+  float: left;
 }
 
 .final-title {
@@ -1258,6 +1318,11 @@ h1 {
   font-size: 3em;
 }
 
+.video {
+  margin-top: 10px;
+  width: 600px;
+  height: 400px;
+}
 
 .archetype-text {
   color: #DFC694;
@@ -1345,6 +1410,47 @@ p {
   }
 }
 
+@media screen and (max-width: 736px) {
+  .video {
+    width: 500px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 634px) {
+  .video {
+    width: 400px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 536px) {
+  .video {
+    width: 300px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 434px) {
+  .first-archetype, .second-archetype, .third-archetype {
+    font-size: 2em;
+  }
+  .archetype-text {
+    font-size: 1em;
+  }
+  .video {
+    width: 200px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .video {
+    width: 160px;
+    height: 130px;
+  }
+}
+
 @media screen and (max-width: 669px) {
   .intro-title {
     font-size: 3em;
@@ -1379,7 +1485,9 @@ p {
   }
 }
 
-
-
-
+@media screen and (max-width: 373px) {
+.return-button, .next-button {
+  font-size: 0.9em;
+}
+}
 </style>
