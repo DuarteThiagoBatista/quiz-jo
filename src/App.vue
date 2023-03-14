@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
+import YouTube from 'vue3-youtube'
 
 const archetypeCounts = ref([
   {
@@ -7,84 +8,84 @@ const archetypeCounts = ref([
     archetype: 'Governante',
     text: 'Ordem, controle, segurança, responsabilidade, prestígio social.',
     count: 0,
-    video: 'videos/governante.mp4'
+    video: 'https://youtu.be/wRkrG8t7FMk'
   },
   {
     id: 1,
     archetype: 'Criador',
     text: 'Inovação, imaginação, criatividade, arte, liberdade.',
     count: 0,
-    video: 'videos/criador.mp4'  
+    video: 'https://youtu.be/gZjRucKqfO4'  
   },
   {
     id: 2,
     archetype: 'Cuidador',
     text: 'Cuidado, conexão, empatia, comprometimento.',
     count: 0,
-    video: 'videos/cuidador.mp4'
+    video: 'https://youtu.be/HLHH0699XtU'
   },
   {
     id: 3,
     archetype: 'Herói',
     text: 'Força, competência, coragem, competição, poder, revolução, segurança, certeza. ',
     count: 0,
-    video: 'videos/heroi.mp4'
+    video: 'https://youtu.be/Ztvr6KhwfHo'
   },
   {
     id: 4,
     archetype: 'Rebelde',
     text: 'Poder, rebeldia, revolução, quebra de paradigmas.',
     count: 0,
-    video: 'videos/rebelde.mp4'
+    video: 'https://youtu.be/k-WvqJRqK10'
   },
   {
     id: 5,
     archetype: 'Sábio',
     text: 'Erudito, pesquisador, professor, especialista.',
     count: 0,
-    video: 'videos/sabio.mp4'
+    video: 'https://youtu.be/fYS8ax-uZq0'
   },
   {
     id: 6,
     archetype: 'Explorador',
     text: 'Descoberta, individualismo, liberdade, autenticidade.',
     count: 0,
-    video: 'videos/explorador.mp4'
+    video: 'https://youtu.be/xi3kbz5Jr4w'
   },
   {
     id: 7,
     archetype: 'Inocente',
     text: 'Leveza, simplicidade, idealização, nostalgia, paz.',
     count: 0,
-    video: 'videos/inocente.mp4'
+    video: 'https://youtu.be/tdHF4O4HDyw'
   },
   {
     id: 8,
     archetype: 'Cara Comum',
     text: 'Inclusão, pertencimento, igualdade, simplicidade.',
     count: 0,
-    video: 'videos/cara_comum.mp4'
+    video: 'https://youtu.be/HzVaKIS_tnI'
   },
   {
     id: 9,
     archetype: 'Bobo da corte',
     text: 'Diversão, viver o momento presente, vida leve descontraída.',
     count: 0,
-    video: 'videos/bobo_corte.mp4'
+    video: 'https://youtu.be/T0zbCJbfZ7Y'
   },
   {
     id: 10,
     archetype: 'Mago',
     text: 'Poder, magia, tecnologia, consciência, universo, sincronicidade, soluções milagrosas, lei da atração, abundância.',
     count: 0,
-    video: 'videos/mago.mp4'
+    video: 'https://youtu.be/Ni0bwJcZidE'
   },
   {
     id: 11,
     archetype: 'Amante',
     text: 'Autoaceitação, felicidade, amor, êxtase, intimidade',
     count: 0,
-    video: 'videos/amante.mp4'
+    video: 'https://youtu.be/y9nnr51JTVA'
   }])
 
 const archetypeQuestions = ref([
@@ -919,7 +920,6 @@ const SetCount = (selectedOption) => {
   archetypeCounts.value.forEach(element => {
     if (element.id == selectedOption) {
       element.count++
-      console.log('add: ', element.id, element.count)
     }
   });
 }
@@ -928,7 +928,6 @@ const removeCount = () => {
   archetypeCounts.value.forEach(element => {
     if (element.id == optionSelected) {
       element.count--
-      console.log('remove: ', element.id, element.count)
     }
   });
 }
@@ -1032,23 +1031,19 @@ const setThreeHighestPercentages = () => {
           <div class="archetype-wrapper">
             <p class="first-archetype">{{ threeHighestPercentages[0].achertype }}: {{ parseInt(threeHighestPercentages[0].percentage) }}%</p>
             <p class="archetype-text">{{ threeHighestPercentages[0].text }}</p>
-            <video class="video" :src="threeHighestPercentages[0].video" controls>
-              Seu navegador não suporta o vídeo.
-            </video>
+            <div class="video">
+              <YouTube width="100%" :src="threeHighestPercentages[0].video" ref="youtube">
+                Seu navegador não suporta o vídeo.
+              </YouTube>
+            </div>
           </div>
-          <div class="archetype-wrapper">
-            <p class="second-archetype" v-if="threeHighestPercentages[1].percentage">{{ threeHighestPercentages[1].achertype }}: {{ parseInt(threeHighestPercentages[1].percentage) }}%</p>
-            <p class="archetype-text" v-if="threeHighestPercentages[1].percentage">{{ threeHighestPercentages[1].text }}</p>
-            <video class="video" :src="threeHighestPercentages[1].video" controls>
-              Seu navegador não suporta o vídeo.
-            </video>
+          <div class="archetype-wrapper" v-if="threeHighestPercentages[1].percentage">
+            <p class="second-archetype">{{ threeHighestPercentages[1].achertype }}: {{ parseInt(threeHighestPercentages[1].percentage) }}%</p>
+            <p class="archetype-text">{{ threeHighestPercentages[1].text }}</p>
           </div>
-          <div class="archetype-wrapper-last">
-            <p class="third-archetype" v-if="threeHighestPercentages[2].percentage">{{ threeHighestPercentages[2].achertype }}: {{ parseInt(threeHighestPercentages[2].percentage) }}%</p>
-            <p class="archetype-text" v-if="threeHighestPercentages[2].percentage">{{ threeHighestPercentages[2].text }}</p>
-            <video class="video" :src="threeHighestPercentages[2].video" controls>
-              Seu navegador não suporta o vídeo.
-            </video>
+          <div class="archetype-wrapper-last" v-if="threeHighestPercentages[2].percentage">
+            <p class="third-archetype">{{ threeHighestPercentages[2].achertype }}: {{ parseInt(threeHighestPercentages[2].percentage) }}%</p>
+            <p class="archetype-text">{{ threeHighestPercentages[2].text }}</p>
           </div>
         </div>
         <div>
@@ -1100,9 +1095,6 @@ body {
 h1 {
   font-weight: 2rem;
   margin-bottom: 2rem;
-}
-
-.intro-section {
 }
 
 .intro-title {
@@ -1319,9 +1311,9 @@ h1 {
 }
 
 .video {
-  margin-top: 10px;
-  width: 600px;
-  height: 400px;
+  margin: 20px auto 0 auto;
+  max-width: 640px;
+  max-height: 360px;
 }
 
 .archetype-text {
@@ -1378,8 +1370,7 @@ h1 {
   font-family: 'Brown Sugar';
   font-weight: 700;
   font-size: 4em;
-  margin: 20px 0;
-  
+  margin: 20px 0; 
 }
 
 button:disabled {
@@ -1410,44 +1401,12 @@ p {
   }
 }
 
-@media screen and (max-width: 736px) {
-  .video {
-    width: 500px;
-    height: 300px;
-  }
-}
-
-@media screen and (max-width: 634px) {
-  .video {
-    width: 400px;
-    height: 250px;
-  }
-}
-
-@media screen and (max-width: 536px) {
-  .video {
-    width: 300px;
-    height: 200px;
-  }
-}
-
 @media screen and (max-width: 434px) {
   .first-archetype, .second-archetype, .third-archetype {
     font-size: 2em;
   }
   .archetype-text {
     font-size: 1em;
-  }
-  .video {
-    width: 200px;
-    height: 150px;
-  }
-}
-
-@media screen and (max-width: 340px) {
-  .video {
-    width: 160px;
-    height: 130px;
   }
 }
 
@@ -1486,8 +1445,8 @@ p {
 }
 
 @media screen and (max-width: 373px) {
-.return-button, .next-button {
-  font-size: 0.9em;
-}
+  .return-button, .next-button {
+    font-size: 0.9em;
+  }
 }
 </style>
