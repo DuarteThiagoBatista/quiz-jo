@@ -1227,7 +1227,7 @@ h1 {
 }
 
 .option.correct {
- background-color: #2cce7d;
+  background-color: #2cce7d;
 }
 
 .option.wrong {
@@ -1236,7 +1236,7 @@ h1 {
 
 .option.selected {
   color: #000;
- background-color: #C5A361;
+  background-color: #C5A361;
 }
 
 .option:last-of-type {
@@ -1322,12 +1322,17 @@ h1 {
   font-size: 3em;
 }
 
+iframe {
+  max-height: 360px;
+  height: 360px;
+}
+
 .video {
   margin: 20px auto 0 auto;
   max-width: 640px;
   max-height: 360px;
-  width: 640px;
   height: 360px;
+
 }
 
 .archetype-text {
@@ -1427,6 +1432,16 @@ p {
 @media screen and (max-width: 669px) {
   .intro-title {
     font-size: 3em;
+  }
+  .final-title {
+    font-size: 2em;
+  }
+  .access-button {
+    font-size: 1.2em;
+    width: 300px;
+  }
+  .video {
+    height: 155px;
   }
 }
 
