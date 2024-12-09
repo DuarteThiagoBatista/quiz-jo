@@ -1482,7 +1482,8 @@ p {
     font-size: 1.2rem
   }
   .final-title {
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    margin-bottom: 15px;
   }
 }
 
