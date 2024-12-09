@@ -1438,10 +1438,11 @@ p {
   }
   .access-button {
     font-size: 1.2em;
-    width: 300px;
+    width: 250px;
+    padding: 15px 25px;
   }
-  .video {
-    height: 155px;
+  .access-first-info {
+    font-size: 2em;
   }
 }
 
@@ -1471,11 +1472,35 @@ p {
   .line {
     display: none;
   }
+  .video {
+    height: 250px;
+  }
+  .archetype-wrapper {
+    margin-bottom: 20px;
+  }
+  .archetype-text {
+    font-size: 1.2rem
+  }
+  .final-title {
+    font-size: 1.5rem
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .video {
+    height: 160px;
+  }
 }
 
 @media screen and (max-width: 373px) {
   .return-button, .next-button {
     font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .video {
+    height: 130px;
   }
 }
 </style>
