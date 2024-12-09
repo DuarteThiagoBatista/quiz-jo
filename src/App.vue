@@ -896,6 +896,7 @@ const isFirtQuestion = computed(() => {
 })
 
 const SetAnswer = evt => {
+  console.log('opt: ', evt.target.value);
   archetypeQuestions.value[currentQuestion.value].selected = evt.target.value
   evt.target.value = null
 }
@@ -907,6 +908,7 @@ const previusQuestion = () => {
 
 const NextQuestion = () => {
   optionSelected = archetypeQuestions.value[currentQuestion.value].selected
+  console.log('opcao: ', optionSelected);
   SetCount(archetypeQuestions.value[currentQuestion.value].selected)
   if (currentQuestion.value < archetypeQuestions.value.length - 1) {
     currentQuestion.value++
@@ -1025,16 +1027,19 @@ const setThreeHighestPercentages = () => {
     </section>
     
     <section v-else>
-      <h1 class="final-title"><span class="congrats">Parabéns!</span> Analisei os dados do seu perfil e aqui abaixo estão os arquétipos que mais combinam com você! </h1>
+      <h1 class="final-title"><span class="congrats">Parabéns!</span> Aqui abaixo estão os arquétipos que mais combinam com você! </h1>
       <div class="result-component">
         <div class="result-wrapper">
           <div class="archetype-wrapper">
             <p class="first-archetype">{{ threeHighestPercentages[0].achertype }}: {{ parseInt(threeHighestPercentages[0].percentage) }}%</p>
             <p class="archetype-text">{{ threeHighestPercentages[0].text }}</p>
+            <br>
+            <p class="archetype-text" >Agora, assista o vídeo abaixo! Ele será muito importante nos seus próximos passos</p>
             <div class="video">
-              <YouTube width="100%" :src="threeHighestPercentages[0].video" ref="youtube">
+              <iframe frameborder="0" allowfullscreen src="https://scripts.converteai.net/60c57e38-903d-4b8c-afdb-955793042b17/players/67563f6507d9af4244e99229/embed.html" id="ifr_67563f6507d9af4244e99229" style=" width: 100%; height: 100%;" referrerpolicy="origin"></iframe> 
+              <!-- <YouTube width="100%" :src="threeHighestPercentages[0].video" ref="youtube">
                 Seu navegador não suporta o vídeo.
-              </YouTube>
+              </YouTube> -->
             </div>
           </div>
           <div class="archetype-wrapper" v-if="threeHighestPercentages[1].percentage">
@@ -1051,11 +1056,18 @@ const setThreeHighestPercentages = () => {
           <a 
             class="access-button" 
             target="_blank"
-            href="https://sso.hotmart.com/login?service=https://purchase.hotmart.com/?_gl=1*1chgn4f*_ga*MTQwNzEyNDQ1OC4xNjc2NjQwODk5*_ga_GQH2V1F11Q*MTY3NjczNDQ3Ni41LjEuMTY3NjczNTM3Ny41Ny4wLjA.&renew=true"
+            href="https://juliaacademy.com.br/"
           >
-            Acessar
+          CLIQUE AQUI PARA ACESSAR A ÁREA DE MEMBROS
           </a>
-          <p class="access-second-info">Ao acessá-la, o próximo passo será assistir o módulo “Aulas de aplicação” para saber como usar seus principais arquétipos de forma prática em suas redes sociais e demais lugares.</p>
+          <p class="access-second-info">Para ingressar, use os dados:</p>
+            <p class="access-second-info">
+              Login: Seu e-mail
+            </p>
+            <p class="access-second-info">
+              Senha: ottoni123
+            </p>
+           <p class="access-second-info"> *Use o e-mail que colocou na hora da compra*</p>
           <p class="msg">Boas aulas!</p>
         </div>
       </div>
@@ -1314,6 +1326,8 @@ h1 {
   margin: 20px auto 0 auto;
   max-width: 640px;
   max-height: 360px;
+  width: 640px;
+  height: 360px;
 }
 
 .archetype-text {
@@ -1332,13 +1346,13 @@ h1 {
   border-radius: 8px;
   font-size: 1.3em;
   font-weight: 500;
-  font-family: 'Claster Oleander';
+  font-family: 'Brown Sugar';
   padding: 15px 55px;
   color: #000;
   display: block;
   margin: 0 auto;
   text-align: center;
-  width: 200px;
+  width: 400px;
   text-decoration: none;
 }
 
