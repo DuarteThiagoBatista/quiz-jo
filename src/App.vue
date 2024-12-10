@@ -878,8 +878,17 @@ let threeHighestPercentages = []
 let optionSelected = null
 let videoUrl = 'videos/inocente.mp4'
 
+const scrollToTop = () => {
+  console.log('print');
+  window.scrollTo({
+    top: 0,
+  });
+};
+
+
 const startQuiz = evt => {
   quizIntro.value = false
+  scrollToTop();
 }
 
 const getCurrentQuestion = computed(() => {
@@ -912,9 +921,11 @@ const NextQuestion = () => {
   SetCount(archetypeQuestions.value[currentQuestion.value].selected)
   if (currentQuestion.value < archetypeQuestions.value.length - 1) {
     currentQuestion.value++
+    scrollToTop();
   } else {
     quizCompleted.value = true
     setThreeHighestPercentages()
+    scrollToTop();
   }
 }
 
@@ -1034,7 +1045,7 @@ const setThreeHighestPercentages = () => {
             <p class="first-archetype">{{ threeHighestPercentages[0].achertype }}: {{ parseInt(threeHighestPercentages[0].percentage) }}%</p>
             <p class="archetype-text">{{ threeHighestPercentages[0].text }}</p>
             <br>
-            <p class="archetype-text" >Agora, assista o vídeo abaixo! Ele será muito importante nos seus próximos passos</p>
+            <p class="archetype-video-text" >Agora, assista o vídeo abaixo! Ele será muito importante nos seus próximos passos</p>
             <div class="video">
               <iframe frameborder="0" allowfullscreen src="https://scripts.converteai.net/60c57e38-903d-4b8c-afdb-955793042b17/players/67563f6507d9af4244e99229/embed.html" id="ifr_67563f6507d9af4244e99229" style=" width: 100%; height: 100%;" referrerpolicy="origin"></iframe> 
               <!-- <YouTube width="100%" :src="threeHighestPercentages[0].video" ref="youtube">
@@ -1341,6 +1352,13 @@ iframe {
   font-family: 'Poppins', sans-serif;
 }
 
+.archetype-video-text {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
+}
+
 .access-button {
   appearance: none;
   outline: none;
@@ -1481,6 +1499,7 @@ p {
   .archetype-text {
     font-size: 1.2rem
   }
+  
   .final-title {
     font-size: 1.5rem;
     margin-bottom: 15px;
